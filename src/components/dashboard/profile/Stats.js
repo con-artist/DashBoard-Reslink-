@@ -8,8 +8,8 @@ import useUser from "../../common/context/useUser";
 const Stats = () => {
   const { userDetail } = useUser();
   const theme = useTheme();
-  const isUplg = useMediaQuery(theme.breakpoints.up("lg"));
-  const isdownlg = useMediaQuery(theme.breakpoints.down("lg"));
+  const isUpXl = useMediaQuery(theme.breakpoints.up("xl"));
+  const isdownXl = useMediaQuery(theme.breakpoints.down("xl"));
   const isUpmd = useMediaQuery(theme.breakpoints.up("md"));
   const isDownmd = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -20,24 +20,26 @@ const Stats = () => {
       boxSizing="border-box"
       mt={{ xs: 18, lg: 16 }}
     >
-      {isUplg && (
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          columnGap={3}
-        >
-          {userDetail?.stats?.map((stat, index) => (
-            <StatsCard
-              key={index}
-              name={stat?.name}
-              count={stat?.count}
-              image={stat?.image}
-            />
-          ))}
-        </Box>
-      )}
-      {isdownlg && isUpmd && (
+      {/* {isUpXl && ( */}
+      <Box
+        display="flex"
+        justifyContent={{ xs: "center", lg: "space-between" }}
+        alignItems="center"
+        columnGap={3}
+        rowGap={4}
+        flexWrap="wrap"
+      >
+        {userDetail?.stats?.map((stat, index) => (
+          <StatsCard
+            key={index}
+            name={stat?.name}
+            count={stat?.count}
+            image={stat?.image}
+          />
+        ))}
+      </Box>
+      {/* )} */}
+      {/* {isdownXl && isUpmd && (
         <Box display="flex" flexDirection="column" rowGap={4}>
           <Box
             display="flex"
@@ -89,7 +91,7 @@ const Stats = () => {
             />
           ))}
         </Box>
-      )}
+      )} */}
     </Box>
   );
 };

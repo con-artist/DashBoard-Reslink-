@@ -10,13 +10,13 @@ const UserData = () => {
       width="100%"
       height="100%"
       boxSizing="border-box"
-      mt={{ xs: 18, lg: 16 }}
+      mt={{ xs: 18, xl: 16 }}
       display="flex"
       rowGap={6}
       columnGap={8}
-      flexDirection={{ xs: "column", lg: "row" }}
-      justifyContent={{ xs: "center", lg: "space-between" }}
-      alignItems={{ xs: "center", lg: "flex-start" }}
+      flexDirection={{ xs: "column", xl: "row" }}
+      justifyContent={{ xs: "center", xl: "space-between" }}
+      alignItems={{ xs: "center", xl: "flex-start" }}
     >
       <Projects />
       <Activity />
